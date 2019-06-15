@@ -1,4 +1,4 @@
-const pokedex = require('../database/pokedex.json');
+const pokedex = require('../data/pokedex.json');
 
 
 export {
