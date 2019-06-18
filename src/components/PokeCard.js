@@ -1,6 +1,6 @@
 import React from 'react';
 
-class PokemonCard extends React.Component {
+class PokeCard extends React.Component {
 
     renderBase(base) {
         return (
@@ -23,10 +23,10 @@ class PokemonCard extends React.Component {
 
     render() {
         const { pokemon } = this.props;
-        const image = `/assets/thumbnails/${pokemon.id}.png`;
+        const image = require(`../assets/thumbnails/${pokemon.id}.png`);
 
         return (
-            <div className="poke-card">
+            <div className="poke-card" tabIndex="0">
                 <img src={image} alt={pokemon.name} className="poke-card--image" />
                 <div className="poke-card--info">
                     <h4 className="poke-card--name">{pokemon.id} - {pokemon.name}</h4>
@@ -38,4 +38,4 @@ class PokemonCard extends React.Component {
     }
 }
 
-export default PokemonCard;
+export default PokeCard;

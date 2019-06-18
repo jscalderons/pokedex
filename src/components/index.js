@@ -1,7 +1,7 @@
-import PokemonList from './PokemonList';
-import PokemonCard from './PokemonCard';
+import PokeList from './PokeList';
+import PokeSearch from './PokeSearch';
 
 export {
-    PokemonList,
-    PokemonCard
+    PokeList,
+    PokeSearch
 }

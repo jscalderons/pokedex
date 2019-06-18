@@ -8,16 +8,68 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+.App {
+  position: relative;
+  height: 100vh;
+}
+
+.pokedex {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.pokedex-header {
+  position: sticky;
+  background-color: rgba(255, 255, 255, .9);
+  /* box-shadow: 0 0 5px gray; */
+  top: 0;
+  display: flex;
+  padding: 1rem;
+  z-index: 2;
+}
+
+.pokedex-main {
+  flex: 1;
+  padding: 1rem;
+}
+
+.pokedex-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-end;
+  min-height: 10vh;
+  padding: 1rem;
+}
+
+.poke-search {
+  display: inline-block;
+  width: 100%;
+  border-radius: 6px;
+  border: 1px solid lightgray;
+  padding: 8px 16px;
+  transition: border-color .2s;
+  outline: none;
+}
+
+.poke-search:focus {
+  border-color: gray;
+}
+
+.poke-count {
+  display: inline-block;
+  border: 1px dashed gray;
+  font-size: 12px;
+  padding: 8px;
+  margin-left: 4px;
+  border-radius: 100px;
 }
 
 .poke-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-gap: 1.7rem;
-  padding: 30px;
+  grid-gap: 1rem;
 }
 
 .poke-card {
@@ -25,9 +77,11 @@ code {
   border: 1px solid lightgray;
   border-radius: 6px;
   transition: all .3s;
+  outline: none;
 }
 
-.poke-card:hover {
+.poke-card:hover,
+.poke-card:focus {
   /* transform: translateY(-10px); */
   box-shadow: 0 0 3px gray;
 }
@@ -37,8 +91,9 @@ code {
   transition: all .3s;
 }
 
-.poke-card:hover .poke-card--image {
-  transform: scale(1.3);
+.poke-card:hover .poke-card--image,
+.poke-card:focus .poke-card--image {
+  transform: scale(1.2);
 }
 
 .poke-card .poke-card--info {
@@ -147,8 +202,8 @@ code {
 }
 
 .poke-card--type-Electric {
-  border: 1px solid #e3e32b;
-  color: #e3e32b;
+  border: 1px solid #333;
+  color: #333;
   background-color: rgba(254, 235, 0, .3);
 }
 
@@ -159,8 +214,8 @@ code {
 }
 
 .poke-card--type-Ice {
-  border: 1px solid #86d2f5;
-  color: #86d2f5;
+  border: 1px solid #355b6c;
+  color: #355b6c;
   background-color: rgba(125, 249, 255, .3);
 }
 
